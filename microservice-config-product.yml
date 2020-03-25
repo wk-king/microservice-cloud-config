@@ -44,7 +44,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream，bus-refresh
+        include: bus-refresh  # hystrix.stream，
 ---
 server:
   port: 8002
