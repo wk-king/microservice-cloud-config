@@ -34,12 +34,17 @@ eureka:
   instance:
     instanceId: ${spring.application.name}:${server.port}
     prefer-ip-address: true 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest # 暴露触发消息总线的地址
 # 在被监控服务上添加暴露端点
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream，bus-refresh
 ---
 server:
   port: 8002
